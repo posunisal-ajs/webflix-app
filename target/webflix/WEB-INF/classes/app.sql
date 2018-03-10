@@ -14,7 +14,7 @@ CREATE TABLE usuario
   senha character varying(100),
   uuid character varying(150),
   CONSTRAINT usuario_pkey PRIMARY KEY (id)
-)
+);
 
 
 CREATE SEQUENCE seqFilme
@@ -33,5 +33,5 @@ CREATE TABLE filme
   informacoes character varying(255),
   img   character varying(255),
   uuid character varying(150),
-  CONSTRAINT usuario_pkey PRIMARY KEY (id)
-)
+  CONSTRAINT filme_pkey PRIMARY KEY (id)
+);
