@@ -24,7 +24,7 @@ CREATE SEQUENCE seqFilme
   START 1
   CACHE 1;
   
-CREATE TABLE usuario
+CREATE TABLE filme
 (
   id bigint NOT NULL DEFAULT nextval('seqFilme'::regclass),
   nome character varying(100),
