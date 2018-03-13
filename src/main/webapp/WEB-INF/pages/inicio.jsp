@@ -22,7 +22,7 @@
 							<input type="text" placeholder="login" name="login" class="form-control" required="required"/>
 						</div>
 						<div class="form-group">
-							<input type="text" placeholder="senha" name="senha" class="form-control" required="required"/>
+							<input type="password" placeholder="senha" name="senha" class="form-control" required="required"/>
 						</div>
 						<button type="submit" class="btn btn-success pull-right mt-4">Salvar</button>
 					</div>

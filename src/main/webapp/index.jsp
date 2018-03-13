@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:import url="WEB-INF/pages/template/header-deslogado.jsp" />
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,36 +10,22 @@
             @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
             .login-page {
-                width: 360px;
+                width: 400px;
                 padding: 8% 0 0;
                 margin: auto;
             }
             .form {
-                position: relative;
-                z-index: 1;
-                background: #FFFFFF;
-                max-width: 360px;
-                margin: 0 auto 100px;
                 padding: 45px;
-                text-align: center;
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+                
             }
             .form input {
-                font-family: "Roboto", sans-serif;
-                outline: 0;
-                background: #f2f2f2;
-                width: 100%;
-                border: 0;
-                margin: 0 0 15px;
-                padding: 15px;
-                box-sizing: border-box;
-                font-size: 14px;
+
             }
             .form button {
                 font-family: "Roboto", sans-serif;
                 text-transform: uppercase;
                 outline: 0;
-                background: #66B2FF;
                 width: 100%;
                 border: 0;
                 padding: 15px;
@@ -47,9 +35,7 @@
                 transition: all 0.3 ease;
                 cursor: pointer;
             }
-            .form button:hover,.form button:active,.form button:focus {
-                background: #43A047;
-            }
+            
             .form .message {
                 margin: 15px 0 0;
                 color: #b3b3b3;
@@ -65,7 +51,7 @@
             .container {
                 position: relative;
                 z-index: 1;
-                max-width: 300px;
+                max-width: 600px;
                 margin: 0 auto;
             }
             .container:before, .container:after {
@@ -105,16 +91,50 @@
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;      
             }
+            .w-site {
+            	padding-bottom: 0px !important;
+            	min-height: 87%;
+            }
+            
+            .box-login {
+                background-color: #FFF;
+			    padding-bottom: 25px;
+			    border-radius: 10px;
+			    border: 1px solid #F5F5F5;
+            }
+            body { 
+			      background: url('static/img/bg-login.jpg') no-repeat center center fixed; 
+				  -webkit-background-size: cover;
+				  -moz-background-size: cover;
+				  -o-background-size: cover;
+				  background-size: cover;
+			}
+            
         </style>
     </head>
-    <body>
-        <div class="login-page">        	
-            <div class="form">
-            	<p>UNISAL - Pós Desenvolvimento Web e Mobile</p>
-                <form action="login" method="post">
-				    <input type="submit" value="Login" />
-				</form>
-            </div>
+    <body class="bg">
+        <div class="w-site">      
+			<section>
+			    <div class="container">
+			      <div class="row justify-content-center">
+			        <div class="col-12 col-xs-12 col-md-12 col-lg-12 text-center box-login">        	
+			            <div class="form">
+			            	<h1>WebFlix</h1>
+			                <form action="login" method="post">
+			                	<div class="form-group">
+									<input type="text" placeholder="login" name="login" class="form-control"/>
+								</div>
+								<div class="form-group">
+									<input type="text" placeholder="senha" name="senha" class="form-control"/>
+								</div>
+								<button type="submit" class="btn btn-default pull-right mt-4 mb-4">ENTRAR</button>
+							</form>
+			            </div>
+			          </div>
+			         </div>
+			        </div>
+			 </section>    
         </div>
     </body>
+    <c:import url="WEB-INF/pages/template/footer.jsp" />
 </html>
