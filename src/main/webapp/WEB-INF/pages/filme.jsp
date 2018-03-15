@@ -51,39 +51,74 @@
                 <table class="table table-car-mob">
                   <thead class="thead-default">
                     <tr>
-                      <th class="w20">#</th>
+                      <th class="w10">#</th>
                       <th class="w30">Filme</th>
-                      <th class="w20">Imagem</th>
+                      <th class="w15">Gênero</th>
+                      <th class="w25">Imagem</th>
+                       <th class="w30">Ações</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <c:forEach var="u" items="${filmes}">
-						<tr id="filme_${u.id}">
-							<td>${u.id}</td>
-							<td>${u.nome}</td>
-							<td><img class="img-table" src="<%=request.getContextPath()%>/upload/${u.uuid}" />
+                    <c:forEach var="f" items="${filmes}">
+						<tr id="filme_${f.id}" class="fwdDetalhe" data-item="${f.id}">
+							<td class="fwdId" data-item="${f.id}">${f.id}</td>
+							<td class="fwdNome" data-item="${f.id}">${f.nome}</td>
+							<td class="fwdGenero" data-item="${f.id}">${f.genero}</td>
+							<td class="fwdLancamento d-none" data-item="${f.id}">${f.lancamento}</td>
+							<td class="fwdInformacoes d-none" data-item="${f.id}">${f.informacoes}</td>
+							<td class="fwdImg" data-item="${f.id}"><img class="img-table fwdImageTable" data-item="${f.id}" src="<%=request.getContextPath()%>/upload/${f.img}" /></td>
+							<td>
+								<form action="editarFilme" class="d-inline-block">
+									<input type="hidden" value="${f.id}"/>
+									<button type="submit" class="btn btn-icon icon-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+								</form>
+								<form action="deletarFilme" class="d-inline-block">
+									<input type="hidden" value="${f.id}"/>
+									<button type="submit" class="btn btn-icon icon-2"><i class="fa fa-trash-o" ></i></button>
+								</form>
+								<button class="btn btn-icon icon-2 actOpenDetalhes" data-item="${f.id}" data-target="#modalDetalhes" data-toggle="modal"><i class="fa fa-plus" ></i></button>
 							</td>
 						</tr>
 				  	</c:forEach>
                   </tbody> 
-                </table> 
+                </table>
               </div>
             </div>
           </div>
         </div>            
       </div> 
     </div>
-<%-- 	<center>
-	    <h1>File Upload</h1>
-	    <form method="post" action="salvarFilme"
-	        enctype="multipart/form-data">
-	        <input type="text" placeholder="nome" name="nome" class="form-control" required="required"/>
-	        Select file to upload: <input type="file" name="file" size="60" /><br />
-	        <br /> <input type="submit" value="Upload" />
-	    </form>
-	</center> --%>
 	</section>
 </div>
+ <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="modalDetalhes" tabindex="-1" role="dialog" aria-labelledby="modalDetalhes" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="fwdTituloFilme"></div>
+      	<div class="fwdGeneroFilme"></div>
+      	<div class="fwdLancamentoFilme"></div>
+      	<div class="fwdInformacoesFilme"></div>
+      	<div class="fwdImgFilme"><img class="img-table fwdImagemDetalhe"/></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div> 
 <c:import url="../pages/template/footer.jsp" />
 
 <script> 
@@ -108,12 +143,31 @@
 
   }
 
-   
   $("#file").change(function(ret) {
       readURL(this);
       //console.log(window.imgName);
       $("#imgFilme").val(window.imgName);
   });
+  
+  $(document).ready(function(){
+	//Mostrando os itens do pedido em minhas inscrições
+      $(this).on("click", ".actOpenDetalhes[data-item]", function(e) {
+      
+        var idItem = $(this).data("item");
+        var nome = $(".fwdNome[data-item='" + idItem + "']").text();
+        var genero = $(".fwdGenero[data-item='" + idItem + "']").text();
+        var lancamento = $(".fwdLancamento[data-item='" + idItem + "']").text();
+        var informacoes = $(".fwdInformacoes[data-item='" + idItem + "']").text();
+        var img = $(".fwdImageTable[data-item='" + idItem + "']").attr('src');
+        $(".fwdTituloFilme").text(nome);
+        $(".fwdGeneroFilme").text(genero);
+        $(".fwdLancamentoFilme").text(lancamento);
+        $(".fwdInformacoesFilme").text(informacoes);
+        $(".fwdImagemDetalhe").attr('src', img);
+        /* console.log(img); */
+      });
+  });
+  
 </script>
 
 

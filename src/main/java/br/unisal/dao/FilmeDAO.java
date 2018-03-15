@@ -73,7 +73,7 @@ public class FilmeDAO extends GenericDAO implements DAOInterface<Filme> {
 	}
 
 	public List<Filme> findAll() throws ClassNotFoundException, SQLException, IOException {
-		String sql = "select id, nome, img from filme";
+		String sql = "select id, nome, genero, lancamento, informacoes, img, uuid from filme";
 		List<Filme> filmes = new ArrayList<>();
 		
 		List<Object[]> objects = executaSqlSemParametro(getConnectionPool(), sql);
@@ -102,8 +102,11 @@ public class FilmeDAO extends GenericDAO implements DAOInterface<Filme> {
 				filme = new Filme();
 				filme.setId(rs.getLong(1));
 				filme.setNome(rs.getString(2));
-				filme.setUuid(rs.getString(3));
-				filme.setImg(rs.getString(4));
+				filme.setGenero(rs.getString(3));
+				filme.setLancamento(rs.getString(4));
+				filme.setInformacoes(rs.getString(5));
+				filme.setImg(rs.getString(6));
+				filme.setUuid(rs.getString(7));
 			}
 		} finally {
 			DbUtil.getInstance().closeQuietly(ps, rs);
@@ -116,7 +119,11 @@ public class FilmeDAO extends GenericDAO implements DAOInterface<Filme> {
 		Filme filme = new Filme();
 		filme.setId((Long) obj[0]);
 		filme.setNome((String) obj[1]);
-		filme.setUuid((String) obj[2]);
+		filme.setGenero((String) obj[2]);
+		filme.setLancamento((String) obj[3]);
+		filme.setInformacoes((String) obj[4]);
+		filme.setImg((String) obj[5]);
+		filme.setUuid((String) obj[6]);
 		return filme;
 	}
 }

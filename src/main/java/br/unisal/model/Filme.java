@@ -19,6 +19,9 @@ public class Filme {
 
 	/**
 	 * @param nome
+	 * @param genero
+	 * @param lancamento
+	 * @param informacoes
 	 * @param img
 	 */
 	public Filme(String nome, String genero, String lancamento, String informacoes, String img) {

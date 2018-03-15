@@ -15,7 +15,7 @@ body {
 
 /*Header*/
 .h-menu-color {
-    background-color: #009ACD;
+    background-color: #2952a3;
 }
 header .navbar-nav a.nav-link {
     color: #FFF; 
@@ -754,19 +754,22 @@ a:hover {
 }
 
 .input-wrapper label {
-  background-color: #3498db;
+  background-color: #528bff;
   border-radius: 5px;
   color: #fff;
   margin: 10px;
-  padding: 6px 20px
+  padding: 6px 20px;
+  cursor:pointer;
 }
 
 .input-wrapper label:hover {
-  background-color: #2980b9
+  background-color: #1f69ff
 }
 
 .img-page {
 	width: 100%;
+	border-radius: 5px;
+	margin-top:10px;
 }
 
 input[type='file'] {
@@ -774,7 +777,8 @@ input[type='file'] {
 }
 
 .img-table {
-	width: 30%;
+	width: 35%;
+	border-radius:2px;
 }
 .btn-clean {
 	background: none;
@@ -808,5 +812,26 @@ input[type='file'] {
 }
 .btn-clean-h1:focus {
 	border: none;
+}
+.btn {
+	cursor:pointer;
+}
+.btn-icon {
+	font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #868e96 !important;
+    border-color: #868e96;
+}
+
+.btn-icon:hover {
+    background-color: #528bff !important;
+    border-color: #528bff !important;
+}
+.btn-icon.icon-1 {
+	padding:10px 9px;
+}
+.btn-icon.icon-2 {
+	padding:10px 11px;
 }
 /***************/
