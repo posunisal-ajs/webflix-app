@@ -57,7 +57,7 @@ public class FilmeEditController extends HttpServlet{
         //System.out.println(path);
         
         //creating the save directory if it doesn't exist
-        /*File uploadDirectory = new File(pathToUpload);
+        File uploadDirectory = new File(pathToUpload);
         if(!uploadDirectory.exists()){
             uploadDirectory.mkdirs();
         }
@@ -79,7 +79,7 @@ public class FilmeEditController extends HttpServlet{
             	part.write(pathToUpload);
             	break;
             }
-        }*/
+        }
 				
 		req.setAttribute("filmes", filmes);
 		req.getRequestDispatcher(Constantes.raizPages + "filme.jsp").forward(req, resp);
