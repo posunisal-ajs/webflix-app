@@ -767,7 +767,7 @@ a:hover {
 }
 
 .img-page {
-	width: 100%;
+	width: 62%;
 	border-radius: 5px;
 	margin-top:10px;
 }
@@ -833,5 +833,64 @@ input[type='file'] {
 }
 .btn-icon.icon-2 {
 	padding:10px 11px;
+}
+.btn-blue-nav {
+	background-color: #2952a3;
+    border-color: #2952a3;
+}
+.btn-blue-nav:hover {
+	background-color: #24478f;
+    border-color: #24478f;
+}
+.div--modal__titulo {
+	text-align: center;
+    display: inherit;
+    font-size: 24px;
+    font-weight: 600;
+}
+.div--modal__detalhes {
+	background-color: #2952a3;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+.div--modal__excluir {
+	background-color: #da5e5b;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+.div--modal__editar {
+	background-color: #2952a3;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+.div--modal__genero {
+	margin-bottom: 5px;
+    font-size: 18px;
+    padding-left: 5px;
+}
+.div--modal__lancamento {
+	margin-bottom: 5px;
+    font-size: 18px;
+    padding-left: 5px;
+}
+.div--modal__informacoes {
+	margin-bottom: 5px;
+    font-size: 18px;
+    padding-left: 5px;
+}
+.div--modal__imgFilme {
+	display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 15px 0 15px 0;
+}
+.img--modal__imgFilme {
+	text-align: center;
+    width: 40%;
+    max-height: 440px;
+    border-radius: 5px;
 }
 /***************/

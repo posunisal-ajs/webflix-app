@@ -37,14 +37,19 @@ public class FilmeDAO extends GenericDAO implements DAOInterface<Filme> {
 		}
 	}
 
-	public void update(Filme t) throws ClassNotFoundException, SQLException, IOException {
-		String sql = "update filme set nome = ? from filme";
+	public void update(Filme t, Long id) throws ClassNotFoundException, SQLException, IOException {
+		String sql = "update filme set nome = ?, genero = ?, lancamento = ?, informacoes = ?, img = ?  where id = ?";
 		PreparedStatement ps = null;
 		try {
+			System.out.println("ID DO FILME - " + t.getNome());
 			ps = getConnectionPool().prepareStatement(sql);
-			ps.setLong(2, t.getId());
+			ps.setLong(6, id);
 
 			ps.setString(1, t.getNome());
+			ps.setString(2, t.getGenero());
+			ps.setString(3, t.getLancamento());
+			ps.setString(4, t.getInformacoes());
+			ps.setString(5, t.getImg());
 
 			ps.execute();
 		} finally {
@@ -125,5 +130,11 @@ public class FilmeDAO extends GenericDAO implements DAOInterface<Filme> {
 		filme.setImg((String) obj[5]);
 		filme.setUuid((String) obj[6]);
 		return filme;
+	}
+
+	@Override
+	public void update(Filme t) throws ClassNotFoundException, SQLException, IOException {
+		// TODO Auto-generated method stub
+		
 	}
 }
