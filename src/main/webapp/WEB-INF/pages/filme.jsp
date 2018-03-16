@@ -13,10 +13,10 @@
       <div class="row justify-content-center">
         <div class="col-12 col-xs-12 col-md-12 col-lg-12 text-center">
           <div>
-            <h2 class="pb-4">Salvar filme</h2>
+            <!-- <h2 class="pb-4">Salvar filme</h2> -->
             
            <%-- <img src="<%=request.getContextPath()%>/static/img/pinterest-portfolio-image-4-4.jpg"/> --%>
-            <form class="form-group col-12 col-xs-12 col-md-12 col-lg-12 align-itens-center justify-content-center d-flex" action="salvarFilme" method="post" enctype="multipart/form-data">
+            <!-- <form class="form-group col-12 col-xs-12 col-md-12 col-lg-12 align-itens-center justify-content-center d-flex" action="salvarFilme" method="post" enctype="multipart/form-data">
     		    <div class="form-group col-12 col-xs-12 col-md-8 col-lg-6">
 	                <div class="form-group">
 	                  <input type="text" placeholder="Nome" name="nome" class="form-control" required="required"/>
@@ -43,11 +43,12 @@
 					<button type="submit" value="Upload" class="btn btn-success pull-right mt-4">Salvar</button>
 				</div>
 				<br/>
-    		</form>
+    		</form> -->
 		    <div class="clearfix"></div>
             <div class="row">
               <div class="col pt-4">
                 <h2 class="pb-4">Lista de filmes</h2>
+                <button class="btn btn-success pull-right mb-4" data-target="#modalAdd" data-toggle="modal">Adicionar <i class="fa fa-plus ml-1" ></i></button>
                 <table class="table table-car-mob">
                   <thead class="thead-default">
                     <tr>
@@ -95,6 +96,55 @@
   Launch demo modal
 </button> -->
 
+<!-- Modal Adicionar -->
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAdd" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="div--modal__adicionar"><h5 class="modal-title">Adicionar filme</h5></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="salvarFilme" method="post" enctype="multipart/form-data" class="d-inline-block">
+	      <div class="modal-body modal-body-bg">
+	      	<div class="form-group">
+               <input type="text" placeholder="Nome" name="nome" class="form-control" required="required"/>
+             </div>
+             <div class="form-group">
+               <input type="text" placeholder="Genero" name="genero" class="form-control" required="required"/>
+             </div>
+             <div class="form-group">
+               <input type="text" placeholder="Lançamento" name="lancamento" class="form-control" required="required"/>
+             </div>
+             <div class="form-group">
+               <textarea  placeholder="Informações" name="informacoes" rows="4" class="form-control" required="required"></textarea>
+             </div>
+             <div class="form-group">
+	             <div class='input-wrapper'>
+	             	<div class="w100 text-center">
+		             	<label for='file'>
+		      				Selecionar imagem de capa
+		      			</label>
+	      			</div>
+	      			<div class="w100 text-center">
+		               <input type="file" name="file" id="file" size="60" />
+                       <img id="img-1-add" class="img-page" src="#" alt="" />
+                       <input type="hidden" name="imgFilme" id="imgFilme" value="">
+	                </div>
+	      		</div>
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+				<input type="hidden" name="id" class="fwdIdFilme" value=""/>
+				<button type="submit" class="btn btn-success">Salvar</button>
+	        	<button type="button" class="btn btn-blue-nav" data-dismiss="modal">Cancelar</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- Modal List -->
 <div class="modal fade" id="modalDetalhes" tabindex="-1" role="dialog" aria-labelledby="modalDetalhes" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -105,7 +155,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-body-bg">
       	<div class="fwdTituloFilme div--modal__titulo"></div>
       	<div class="fwdImgFilme div--modal__imgFilme"><img class="img--modal__imgFilme fwdImagemDetalhe"/></div>
       	<div class="div--modal__genero"><strong>Gênero:</strong> <span class="fwdGeneroFilme"></span></div>
@@ -130,7 +180,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-body-bg">
       	<div class="fwdTituloFilme div--modal__titulo"></div>
       	<div class="fwdImgFilme div--modal__imgFilme"><img class="img--modal__imgFilme fwdImagemDetalhe"/></div>
       </div>
@@ -151,13 +201,13 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="div--modal__editar"><h5 class="modal-title">Alterar</h5></div>
+        <div class="div--modal__editar"><h5 class="modal-title">Editar filme</h5></div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form action="editarFilme" method="post" enctype="multipart/form-data" class="d-inline-block">
-	      <div class="modal-body">
+	      <div class="modal-body modal-body-bg">
 	      	<div class="form-group">
                <input type="text" placeholder="Nome" name="nome" class="form-control fwdTituloEdit" required="required"/>
              </div>
@@ -168,16 +218,20 @@
                <input type="text" placeholder="Lançamento" name="lancamento" class="form-control fwdLancamentoEdit" required="required"/>
              </div>
              <div class="form-group">
-               <textarea  placeholder="Informações" name="informacoes" class="form-control fwdInformacoesEdit" required="required"></textarea>
+               <textarea  placeholder="Informações" name="informacoes" rows="4" class="form-control fwdInformacoesEdit" required="required"></textarea>
              </div>
              <div class="form-group">
 	             <div class='input-wrapper'>
-	      			<label for='fileEdit'>
-	      				Selecionar imagem
-	      			</label>
-	                <input type="file" name="fileEdit" id="fileEdit" size="60" />
-	                <img id="img-1-edit" class="img-page" src="#" alt="" />
-	                <input type="hidden" name="imgFilmeEdit" id="imgFilmeEdit" value="">
+	             	<div class="w100 text-center">
+		             	<label for='fileEdit'>
+		      				Selecionar imagem de capa
+		      			</label>
+	      			</div>
+	      			<div class="w100 text-center">
+		                <input type="file" name="fileEdit" id="fileEdit" size="60" />
+		                <img id="img-1-edit" class="img-page" src="#" alt="" />
+		                <input type="hidden" name="imgFilmeEdit" id="imgFilmeEdit" value="">
+	                </div>
 	      		</div>
 	        </div>
 	      </div>

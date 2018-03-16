@@ -767,7 +767,7 @@ a:hover {
 }
 
 .img-page {
-	width: 62%;
+	width: 35%;
 	border-radius: 5px;
 	margin-top:10px;
 }
@@ -837,6 +837,7 @@ input[type='file'] {
 .btn-blue-nav {
 	background-color: #2952a3;
     border-color: #2952a3;
+    margin-left: 5px !important;
 }
 .btn-blue-nav:hover {
 	background-color: #24478f;
@@ -862,6 +863,12 @@ input[type='file'] {
 }
 .div--modal__editar {
 	background-color: #2952a3;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+.div--modal__adicionar {
+	background-color: #62ab62;
     color: #FFF;
     padding: 5px 15px;
     border-radius: 4px;
@@ -892,5 +899,8 @@ input[type='file'] {
     width: 40%;
     max-height: 440px;
     border-radius: 5px;
+}
+.modal-body-bg {
+	background-color: #f2f2f2;
 }
 /***************/
