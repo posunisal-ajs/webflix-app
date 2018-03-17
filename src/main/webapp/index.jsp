@@ -119,15 +119,15 @@
 			      <div class="row justify-content-center">
 			        <div class="col-12 col-xs-12 col-md-12 col-lg-12 text-center box-login">        	
 			            <div class="form">
-			            	<h1>WebFlix</h1>
+			            	<img class="login-logo" src="<%=request.getContextPath()%>/static/img/webflix.png"/>
 			                <form action="login" method="post">
 			                	<div class="form-group">
-									<input type="text" placeholder="login" name="login" class="form-control"/>
+									<input type="text" placeholder="Digite um email" name="email" class="form-control"/ required>
 								</div>
 								<div class="form-group">
-									<input type="text" placeholder="senha" name="senha" class="form-control"/>
+									<input type="text" placeholder="Digite uma senha" name="pass" class="form-control"/ required>
 								</div>
-								<button type="submit" class="btn btn-default pull-right mt-4 mb-4">ENTRAR</button>
+								<button type="submit" class="btn btn__blue--nav pull-right mt-4 mb-4">ENTRAR</button>
 							</form>
 			            </div>
 			          </div>

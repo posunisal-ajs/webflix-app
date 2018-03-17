@@ -903,4 +903,24 @@ input[type='file'] {
 .modal-body-bg {
 	background-color: #f2f2f2;
 }
+.error-login {
+    position: absolute;
+    top: 4px;
+    color: #FFF;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+.login-logo {
+	width: 90%;
+    margin-bottom: 40px;
+}
+.btn__blue--nav {
+	background-color: #2952a3;
+    border-color: #2952a3;
+}
+.btn__blue--nav:hover {
+	background-color: #24478f;
+    border-color: #24478f;
+}
 /***************/

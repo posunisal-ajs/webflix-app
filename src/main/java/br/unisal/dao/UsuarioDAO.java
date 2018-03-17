@@ -14,9 +14,6 @@ import br.unisal.util.DbUtil;
 public class UsuarioDAO extends GenericDAO implements DAOInterface<Usuario> {
 	private static UsuarioDAO INSTANCE;
 
-	private UsuarioDAO() {
-	}
-
 	public static UsuarioDAO getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new UsuarioDAO();
@@ -114,6 +111,35 @@ public class UsuarioDAO extends GenericDAO implements DAOInterface<Usuario> {
 
 		return usuario;
 	}
+	
+	public boolean checkUser(String email, String pass) throws ClassNotFoundException, SQLException, IOException 
+    {	String sql = "select id, nome from usuario where email=? and senha=?";
+    	 Usuario usuario = null;
+		 PreparedStatement ps = null;
+		 ResultSet rs = null;
+		 DbUtil.getInstance().closeQuietly(ps, rs);
+     	try {
+     		ps = getConnectionPool().prepareStatement(sql);
+	        ps.setString(1, email);
+	        ps.setString(2, pass);
+	        rs = ps.executeQuery();
+	        
+	        while (rs.next()) {
+				usuario = new Usuario();
+				usuario.setId(rs.getLong(1));
+				usuario.setNome(rs.getString(2));
+			}
+		} catch(Exception erro) {
+			System.out.println("Erro ocorrido: n" + erro);
+		} finally {
+			DbUtil.getInstance().closeQuietly(ps, rs);
+		}
+		if (usuario != null) {
+			return true;
+		} else {
+			return false;
+		}                 
+	 }   
 
 	private Usuario castObjectToModel(Object[] obj) {
 		Usuario usuario = new Usuario();
