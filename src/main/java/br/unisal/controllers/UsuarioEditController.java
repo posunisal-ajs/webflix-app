@@ -1,29 +1,27 @@
 package br.unisal.controllers;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-
-import br.unisal.dao.FilmeDAO;
 import br.unisal.dao.UsuarioDAO;
-import br.unisal.model.Filme;
 import br.unisal.model.Usuario;
 import br.unisal.util.Constantes;
 
 @WebServlet(name = "UsuarioEditController", description = "Controlador para inserir filmes", urlPatterns = "/editarUsuario")
-@MultipartConfig(fileSizeThreshold = 1024*1024*2,maxFileSize = 1024*1024*10,maxRequestSize = 1024*1024*50)
+
 public class UsuarioEditController extends HttpServlet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * @author Alex R Ribeiro
 	 */

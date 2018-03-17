@@ -28,8 +28,8 @@ public class UsuarioDeleteController extends HttpServlet{
 		System.out.println(req.getParameter("id"));
 		List<Usuario> usuarios = new ArrayList<>();	
 		try {
-			usuarios = USUARIO_DAO.findAll();
 			USUARIO_DAO.delete(Long.parseLong(req.getParameter("id")));
+			usuarios = USUARIO_DAO.findAll();
 		
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.println(e.toString());
