@@ -17,7 +17,7 @@ import br.unisal.model.Usuario;
 import br.unisal.util.Constantes;
 
 @WebServlet(name = "UsuarioEditController", description = "Controlador para inserir filmes", urlPatterns = "/editarUsuario")
-@MultipartConfig(fileSizeThreshold = 1024*1024*2,maxFileSize = 1024*1024*10,maxRequestSize = 1024*1024*50)
+
 public class UsuarioEditController extends HttpServlet{
 
 	/**
