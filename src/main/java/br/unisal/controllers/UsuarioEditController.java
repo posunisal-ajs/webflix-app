@@ -1,6 +1,5 @@
 package br.unisal.controllers;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,11 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
-import br.unisal.dao.FilmeDAO;
 import br.unisal.dao.UsuarioDAO;
-import br.unisal.model.Filme;
 import br.unisal.model.Usuario;
 import br.unisal.util.Constantes;
 
