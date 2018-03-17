@@ -39,7 +39,6 @@
 							<th>Nome</th>
 							<th>Email</th>
 							<th>Login</th>
-							<th>Senha</th>
 							<th>UUID</th>
 	                    </tr>
 	                  </thead>
@@ -50,7 +49,6 @@
 								<td>${u.nome}</td>
 								<td>${u.email}</td>
 								<td>${u.login}</td>
-								<td>${u.senha}</td>
 								<td>${u.uuid}</td>
 							</tr>
 						</c:forEach>

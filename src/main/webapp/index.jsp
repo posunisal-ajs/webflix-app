@@ -125,7 +125,7 @@
 									<input type="text" placeholder="Digite um email" name="email" class="form-control"/ required>
 								</div>
 								<div class="form-group">
-									<input type="text" placeholder="Digite uma senha" name="pass" class="form-control"/ required>
+									<input type="password" placeholder="Digite uma senha" name="pass" class="form-control"/ required>
 								</div>
 								<button type="submit" class="btn btn__blue--nav pull-right mt-4 mb-4">ENTRAR</button>
 							</form>
