@@ -10,6 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 063820e41d2e1ae0416bdf3a294e7b9740d920df
 import br.unisal.dao.UsuarioDAO;
 import br.unisal.model.Usuario;
 import br.unisal.util.Constantes;
@@ -50,7 +54,7 @@ public class UsuarioEditController extends HttpServlet{
 		}
 				
 		req.setAttribute("usuarios", usuarios);
-		req.getRequestDispatcher(Constantes.raizPages + "usuario.jsp").forward(req, resp);
+		req.getRequestDispatcher(Constantes.raizPages + "inicio.jsp").forward(req, resp);
 	}
 
 }
