@@ -25,7 +25,7 @@ public class UsuarioDeleteController extends HttpServlet{
 	private static final UsuarioDAO USUARIO_DAO = UsuarioDAO.getInstance();
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		System.out.println(req.getParameter("id"));
 		List<Usuario> usuarios = new ArrayList<>();	
 		try {
 			usuarios = USUARIO_DAO.findAll();

@@ -83,7 +83,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="salvarFilme" method="post" enctype="multipart/form-data" class="d-inline-block">
+      <form action="salvarUsuario" method="post" class="d-inline-block">
 	      <div class="modal-body modal-body-bg">
 	      	<div class="form-group">
 				<input type="text" placeholder="nome" name="nome" class="form-control" required="required"/>
@@ -147,7 +147,7 @@
       	<div class="fwdImgFilme div--modal__imgFilme"><img class="img--modal__imgFilme fwdImagemDetalhe"/></div>
       </div>
       <div class="modal-footer">
-		<form action="deletarFilme" method="post" enctype="multipart/form-data" class="d-inline-block">
+		<form action="deletarUsuario" method="post" class="d-inline-block">
 			<input type="hidden" name="id" class="fwdId" value=""/>
 			<button type="submit" class="btn btn-danger">Excluir</button>
 		</form>
@@ -168,7 +168,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="editarFilme" method="post" enctype="multipart/form-data" class="d-inline-block">
+      <form action="editarUsuario" method="post" class="d-inline-block">
 	      <div class="modal-body modal-body-bg">
 	      	<div class="form-group">
                <input type="text" placeholder="Nome" name="nome" class="form-control fwdNomeEdit" required="required"/>
@@ -208,7 +208,7 @@
 	        $(".fwdEmail").text(email);
 	        $(".fwdLogin").text(login);
 	        $(".fwdUuid").text(uuid);
-	        $(".fwdId").val(uuid);
+	        $(".fwdId").val(idItem);
 	        
 	        /* console.log(img); */
 	      });
