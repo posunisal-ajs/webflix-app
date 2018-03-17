@@ -423,61 +423,7 @@ a:hover {
 .form-check-input {
 	display: initial !important;
 }
-.table-inscricoes:hover {
-	background-color: #fafafa;
-}
-.table-inscricoes-active {
-	background-color: #fafafa;
-	border-left: 2px solid #e9ecef;
-	border-right: 2px solid #e9ecef;
-	border-top: 2px solid #e9ecef;
-}
-.table-detalhe {
-	/*background-color: #fafafa; */
-	border-left: 2px solid #e9ecef;
-	border-right: 2px solid #e9ecef;
-	border-bottom:  2px solid #e9ecef;
-}
 
-.table-detalhe-2 {
-	background-color: #fafafa; 
-	border-left: 2px solid #e9ecef;
-	border-right: 2px solid #e9ecef;
-	border-bottom: 2px solid #e9ecef;
-}
-
-.table-detalhe th {
-	font-weight: 100;
-}
-
-.table-detalhe-2 td {
-	border: none;
-}
-.table-personalised {
-    width: 95% !important;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-.table-pedido-f tr td {
-  padding: 0.40em !important;
-}
-.fa-credit-pers {
-	font-size: 0.8em;
-}
-.msg-completar {
-    width: 100%;
-    background: #FFF;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    min-height: 40px;
-    color: #00a8f1;
-    padding-left: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 5px;
-    border: 1px solid;
-}
 .f-size-1-1em{
 	font-size: 1.1em;
 }
@@ -490,33 +436,6 @@ a:hover {
 .f-bold {
 	font-weight: bold !important;
 }
-
-.box-modalidade {
-	display: inline-flex;
-}
-
-.box-modalidade .check-radio-wrapper {
-	margin-right: 10px;
-	margin-left: 10px;
-	margin-bottom: 20px;
-	/*background-color: #00b8f1;*/
-	background-color: #FFF;
-	/*color: #FFF;*/
-	padding: 10px;
-	cursor: pointer;
-	border: 1px solid #00b8f1;
-	width: 200px;
-	display: inline-block;
-	min-height: 102px;
-	vertical-align: top;
-	cursor: pointer;
-}
-
-.box-modalidade .check-radio-wrapper label {
-	margin-bottom: 0 !important;
-	cursor: pointer;
-}
-
 .cursor-p {
 	cursor: pointer;
 }
@@ -572,73 +491,11 @@ a:hover {
 	border-radius: 2px !important;
 	padding: 10px 12px !important;
 }
-/************/
 
-/*Facebook button*/
-.fb-login-button {
-	display: none !important;
-}
-.btn-facebook-personalised {
-	background-color: #4267b2; 
-	width: 100%;
-	border-radius: 2px;
-	display: block;
-	height: 45px;
-	line-height: 45px;
-	color: #FFF;
-	text-decoration: none;
-	font-size: 18px;
-}
-.btn-facebook-personalised:hover {
-	text-decoration: none;
-	color: #FFF;
-	opacity: 0.9;
-}
-.facebook-icon {
-    position: absolute;
-    left: 32px;
-    top: 6px;
-    font-size: 1.8em;
-}
-/***************/
 
 /*Datepicker*/
 #ui-datepicker-div {
 	z-index: 5 !important;
-}
-
-/*Pagseguro*/ 
-.error-pagseguro {
-    width: 100%;
-    background: #FFF;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    min-height: 40px;
-    color: #dc3545;
-    padding-left: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 5px;
-    border: 1px solid;
-}
-
-.error-inscricao {
-    width: 100%;
-    background: #FFF;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    min-height: 40px;
-    color: #dc3545;
-    padding: 7px 20px 7px 20px;
-    border-radius: 5px;
-    border: 1px solid;
-    text-align: left;
-}
-.cart-error {
-	float: right;
-	font-size: 1.2em;
 }
 
 .d-flex {

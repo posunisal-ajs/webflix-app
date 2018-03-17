@@ -46,7 +46,7 @@
 	                    <c:forEach var="u" items="${usuarios}">
 							<tr id="usuario_${u.id}">
 								<td class="fwdId" data-item="${u.id}">${u.id}</td>
-								<td class="fwdTitulo" data-item="${u.id}">${u.nome}</td>
+								<td class="fwdNome" data-item="${u.id}">${u.nome}</td>
 								<td class="fwdEmail" data-item="${u.id}">${u.email}</td>
 								<td class="fwdLogin d-none" data-item="${u.id}">${u.login}</td>
 								<td class="fwdSenha d-none" data-item="${u.id}">${u.senha}</td>
@@ -120,9 +120,9 @@
       </div>
       <div class="modal-body modal-body-bg">
       	<div class="fwdNome div--modal__titulo"></div>
-      	<div class="div--modal__genero"><strong>Email:</strong> <span class="fwdEmail"></span></div>
-      	<div class="div--modal__lancamento"><strong>Login:</strong> <span class="fwdLogin"></div>
-      	<div class="div--modal__informacoes"><strong>UUID:</strong> <span class="fwdUuid"></div>
+      	<div class="div--modal__genero"><strong>Email:</strong> <span class="fwdEmailUsuario"></span></div>
+      	<div class="div--modal__lancamento"><strong>Login:</strong> <span class="fwdLoginUsuario"></div>
+      	<div class="div--modal__informacoes"><strong>UUID:</strong> <span class="fwdUuidUsuario"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-blue-nav" data-dismiss="modal">Fechar</button>
@@ -143,8 +143,7 @@
         </button>
       </div>
       <div class="modal-body modal-body-bg">
-      	<div class="fwdNome div--modal__titulo"></div>
-      	<div class="fwdImgFilme div--modal__imgFilme"><img class="img--modal__imgFilme fwdImagemDetalhe"/></div>
+      	<div class="fwdNomeUsuario div--modal__titulo"></div>
       </div>
       <div class="modal-footer">
 		<form action="deletarUsuario" method="post" class="d-inline-block">
@@ -153,7 +152,6 @@
 		</form>
         <button type="button" class="btn btn-blue-nav" data-dismiss="modal">Cancelar</button>
       </div>
-      
     </div>
   </div>
 </div>
@@ -180,7 +178,7 @@
                <input type="text" placeholder="Login" name="login" class="form-control fwdLoginEdit" required="required"/>
              </div>
              <div class="form-group">
-               <input type="password" placeholder="Senha" name="senha" class="form-control fwdLoginEdit" required="required"/>
+               <input type="password" placeholder="Senha" name="senha" class="form-control fwdSenhaEdit" required="required"/>
              </div>
 	      </div>
 	      <div class="modal-footer">
@@ -199,15 +197,15 @@
 		//Mostrando os itens do pedido em minhas inscrições
 	      $(this).on("click", ".actOpenDetalhes[data-item]", function(e) {
 	        var idItem = $(this).data("item");
-	        var nome = $(".fwdTitulo[data-item='" + idItem + "']").text();
+	        var nome = $(".fwdNome[data-item='" + idItem + "']").text();
 	        var email = $(".fwdEmail[data-item='" + idItem + "']").text();
 	        var login = $(".fwdLogin[data-item='" + idItem + "']").text();
 	        var senha = $(".fwdSenha[data-item='" + idItem + "']").text();
 	        var uuid  = $(".fwdUuid[data-item='" + idItem + "']").text();
-	        $(".fwdNome").text(nome);
-	        $(".fwdEmail").text(email);
-	        $(".fwdLogin").text(login);
-	        $(".fwdUuid").text(uuid);
+	        $(".fwdNomeUsuario").text(nome);
+	        $(".fwdEmailUsuario").text(email);
+	        $(".fwdLoginUsuario").text(login);
+	        $(".fwdUuidUsuario").text(uuid);
 	        $(".fwdId").val(idItem);
 	        
 	        /* console.log(img); */
@@ -215,7 +213,7 @@
 	
       	$(this).on("click", ".actOpenEditar[data-item]", function(e) {
           var idItem = $(this).data("item");
-          var nome  = $(".fwdTitulo[data-item='" + idItem + "']").text();
+          var nome  = $(".fwdNome[data-item='" + idItem + "']").text();
           var email = $(".fwdEmail[data-item='" + idItem + "']").text();
           var login = $(".fwdLogin[data-item='" + idItem + "']").text();
           var senha = $(".fwdSenha[data-item='" + idItem + "']").text();
