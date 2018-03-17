@@ -39,7 +39,7 @@ public class UsuarioDAO extends GenericDAO implements DAOInterface<Usuario> {
 		PreparedStatement ps = null;
 		try {
 			ps = getConnectionPool().prepareStatement(sql);
-			ps.setLong(5, t.getId());
+			ps.setLong(5, id);
 
 			ps.setString(1, t.getNome());
 			ps.setString(2, t.getEmail());
