@@ -35,7 +35,7 @@ public class UsuarioDAO extends GenericDAO implements DAOInterface<Usuario> {
 	}
 
 	public void update(Usuario t, Long id) throws ClassNotFoundException, SQLException, IOException {
-		String sql = "update usuario set nome = ?, email = ?, login = ?, senha = ? from usuario where id = ?";
+		String sql = "update usuario set nome = ?, email = ?, login = ?, senha = ? where id = ?";
 		PreparedStatement ps = null;
 		try {
 			ps = getConnectionPool().prepareStatement(sql);
