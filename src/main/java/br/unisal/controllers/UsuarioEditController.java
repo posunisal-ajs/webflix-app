@@ -48,7 +48,7 @@ public class UsuarioEditController extends HttpServlet{
 		}
 				
 		req.setAttribute("usuarios", usuarios);
-		req.getRequestDispatcher(Constantes.raizPages + "usuario.jsp").forward(req, resp);
+		req.getRequestDispatcher(Constantes.raizPages + "inicio.jsp").forward(req, resp);
 	}
 
 }
